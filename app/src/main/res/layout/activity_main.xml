@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:layout_centerVertical="true"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.truedreamz.audiovideorecorder.MainActivity">
+
+
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageViewMode"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/mic_pic"/>
+
+
+
+    <Button
+        android:id="@+id/btnAudioRecord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mAudioRecord"
+        android:gravity="center"
+        android:background="@android:color/holo_orange_light"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/imageViewMode"
+        />
+
+    <Button
+        android:id="@+id/btnScreenRecord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mScreenRecord"
+        android:layout_below="@+id/btnAudioRecord"
+        android:gravity="center"
+        android:background="@android:color/holo_orange_light"
+        android:layout_margin="5dp"
+        />
+    <ToggleButton
+        android:id="@+id/toggleScreenRecord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="5dp"
+        android:visibility="gone"
+        android:layout_below="@+id/btnScreenRecord"
+        android:layout_centerHorizontal="true"
+        android:textOff="Record - ON"/>
+
+    <ImageButton
+        android:id="@+id/imgBtnPlayVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/play_video"
+        android:layout_below="@+id/toggleScreenRecord"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:onClick="onPlayVideoListener"
+        />
+    <!--<VideoView
+        android:id="@+id/videoView"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_below="@+id/toggleScreenRecord"
+        android:visibility="gone"
+        />-->
+
+    <RelativeLayout
+        android:id="@+id/layout_audio_confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_black"
+        android:padding="10dp"
+        android:visibility="gone"
+        >
+
+        <ImageButton
+            android:id="@+id/imgAudioPlay"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/audio_play"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone"
+            android:onClick="onAudioPlayListener"
+            />
+
+
+
+        <com.truedreamz.audiovideorecorder.NumberProgressBar
+            android:id="@+id/numberbarAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            style="@style/NumberProgressBar_Beauty_Red"
+            custom:progress_current="0"
+            android:layout_toRightOf="@+id/imgAudioPlay"
+            custom:progress_text_color="@android:color/white"
+            />
+
+        <!--<SeekBar
+            android:id="@+id/seekBarAudioRecord"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:progress="0"
+            android:focusableInTouchMode="false"
+            android:layout_toRightOf="@+id/imgAudioPlay"
+            android:layout_below="@+id/numberbarAudio"
+            android:visibility="gone"
+            />-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/numberbarAudio"
+            android:layout_centerHorizontal="true"
+            >
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/record_redo"
+                android:layout_marginRight="20dp"
+                android:onClick="onAudioRecordRedoListener"
+                />
+            <ImageButton
+                android:id="@+id/imgAudioConfirm"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/audio_confirm"
+                android:layout_marginLeft="20dp"
+                android:onClick="onAudioRecordConfirmListener"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

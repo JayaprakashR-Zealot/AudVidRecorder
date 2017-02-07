@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AudioVideoRecorder</string>
+
+    <string name="mAudioRecord">Audio Record</string>
+    <string name="mScreenRecord">Screen Record</string>
+
+</resources>
